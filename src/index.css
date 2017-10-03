@@ -1,0 +1,169 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.markdown-body {
+  font-size: 16px;
+  width: 60%;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+.markdown-body blockquote {
+  /*
+  padding: 0 1em;
+  color: #6a737d;
+  
+  margin-top: 0;
+  margin-bottom: 16px;
+  display: block;
+  border-left: 0.25em solid #dfe2e5;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 40px;
+  -webkit-margin-end: 40px;
+  padding: 15px;
+  word-wrap: break-word;
+  */
+  margin-bottom: 16px;
+  border-left: 0.25em solid #dfe2e5;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 40px;
+  -webkit-margin-end: 40px;
+  background-color: #F9F5F5;
+  padding: 15px;
+  border: none;
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  line-height: 1.28571429em;
+  text-transform: none;
+  color: rgba(0, 0, 0, .87);
+  display: table-cell;
+  vertical-align: middle;
+ 
+  -webkit-box-shadow: 57px 61px 14px -55px rgba(54, 54, 54, 1);
+  -moz-box-shadow: 57px 61px 14px -55px rgba(54, 54, 54, 1);
+  box-shadow: 57px 61px 14px -55px rgba(54, 54, 54, 1);
+}
+
+.markdown-body code {
+  padding: 2px 5px 3px 5px;
+  margin: 0;
+  font-size: 85%;
+  background-color: #404040;
+  color: white;
+  border-radius: 3px;
+}
+
+.markdown-body code:hover {
+  color: #404040;
+  background-color: white;
+}
+
+.markdown-body pre {
+  padding: 15px;
+  margin: 0;
+  color: black;
+  font-size: 85%;
+  background-color: rgba(27, 31, 35, 0.05);
+  border-radius: 3px;
+}
+
+.markdown-body pre code {
+  margin: 0;
+  color: inherit;
+  font-size: 85%;
+  background-color: rgba(27, 31, 35, 0.05);
+  border-radius: 3px;
+}
+
+
+/* all levels */
+
+.markdown-body a {
+  color: #000;
+  text-decoration: none;
+}
+
+
+/* first level */
+
+.markdown-body ul {
+  margin: 2em 0;
+  list-style-type: none;
+  background: url(http://maxdesign.com.au/jobs/example-folder-metaphor/dots1.png) repeat-y 0 0;
+  padding: 0;
+}
+
+.markdown-body ul li {
+  display: inline;
+}
+
+.markdown-body ul li a {
+  display: block;
+  padding: 0 0 0 15px;
+  margin: 0;
+  line-height: 24px;
+  background: url(http://maxdesign.com.au/jobs/example-folder-metaphor/bullet1.png) no-repeat 0 0;
+}
+
+.markdown-body ul li a.open {
+  background: url(http://maxdesign.com.au/jobs/example-folder-metaphor/bullet1-open.png) no-repeat 0 0;
+}
+
+
+/* second level */
+
+.markdown-body ul ul {
+  margin: 0;
+  padding: 0;
+  background: url(http://maxdesign.com.au/jobs/example-folder-metaphor/dots2.png) repeat-y 30px 0;
+}
+
+.markdown-body ul li li a {
+  padding: 0 0 0 45px;
+  background: url(http://maxdesign.com.au/jobs/example-folder-metaphor/bullet2.png) no-repeat 0 0;
+}
+
+.markdown-body ul li li a.open {
+  background: url(http://maxdesign.com.au/jobs/example-folder-metaphor/bullet2-open.png) no-repeat 0 0;
+}
+
+
+/* third level */
+
+.markdown-body ul ul ul {
+  padding: 0;
+  background: url(http://maxdesign.com.au/jobs/example-folder-metaphor/dots3.png) repeat-y 60px 0;
+}
+
+.markdown-body ul li li li a {
+  padding: 0 0 0 75px;
+  background: url(http://maxdesign.com.au/jobs/example-folder-metaphor/bullet3.png) no-repeat 0 0;
+}
+
+.markdown-body ul li li li a.open {
+  background: url(http://maxdesign.com.au/jobs/example-folder-metaphor/bullet3-open.png) no-repeat 0 0;
+}
+
+
+/* fourth level */
+
+.markdown-body ul ul ul ul {
+  padding: 0;
+  background: url(http://maxdesign.com.au/jobs/example-folder-metaphor/dots4.png) repeat-y 90px 0;
+}
+
+.markdown-body ul li li li li a {
+  padding: 0 0 0 105px;
+  background: url(http://maxdesign.com.au/jobs/example-folder-metaphor/bullet4.png) no-repeat 0 0;
+}
+
+.markdown-body ul li li li li a.open {
+  background: url(http://maxdesign.com.au/jobs/example-folder-metaphor/bullet4-open.png) no-repeat 0 0;
+}

@@ -1,0 +1,11 @@
+{
+  "host": "localhost",
+  "public": "../public/",
+  "paginate": {
+    "default": 50,
+    "max": 50
+  },
+  "port": 3931,
+  "mongodb": "mongodb://disrupttech:akainz@ds131511.mlab.com:31511/project-control-v2"
+  
+}
