@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 import { Table } from 'antd'
 import _ from 'lodash';
 
@@ -13,11 +13,17 @@ class StudentTable extends React.Component {
 
     }
 
+    onCellClick = (record, event) => {
+        console.log(record);
+        console.log(event);
+    }
+
     render() {
 
         const dataSource = [];
         _.forEach(this.props.students, function (dataItem, index) {
             dataSource.push({
+                id: dataItem._id,
                 key: index,
                 studentName: dataItem.name.first + ' ' + dataItem.name.last,
                 email: dataItem.email,
@@ -28,6 +34,7 @@ class StudentTable extends React.Component {
             });
 
         });
+
 
         const columns = [{
             title: 'Student Name',
@@ -58,12 +65,25 @@ class StudentTable extends React.Component {
             title: 'Phone',
             dataIndex: 'phone',
             key: 'phone',
+        },
+        {
+            title: 'Action',
+            key: 'action',
+
+            render: (record) => <span>
+                                    <Link to={`/student/${record.id}`}>Edit</Link>
+                                    <span className="ant-divider" />
+                                    <Link to=''>Edit</Link>
+                                </span>
+
         }
         ];
 
+
+
         return (
             <div>
-                <Table dataSource={dataSource} columns={columns} size='small' bordered />
+                <Table dataSource={dataSource} columns={columns} size='small' bordered onCellClick={this.onCellClick} />
             </div>
         );
     }

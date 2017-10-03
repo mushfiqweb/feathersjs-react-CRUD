@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router';
 import { SubmissionError } from 'redux-form';
 import { connect } from 'react-redux';
-import { newStudent, saveStudent, fetchStudent, updateStudent } from '../Actions/student.Actions';
+import { newStudent, saveStudent, fetchStudent, updateStudent, sendEmail } from '../Actions/student.Actions';
 import StudentForm from '../Components/studentForm';
 
 
@@ -43,7 +43,7 @@ class StudentFormPage extends Component {
                 {
                     this.state.redirect ?
                         <Redirect to="/home" /> :
-                        <StudentForm student={this.props.student} loading={this.props.loading} onSubmit={this.submit} />
+                        <StudentForm student={this.props.student} loading={this.props.loading} onSubmit={this.submit} sendEmail={this.props.sendEmail} emailed={this.props.emailed}/>
                 }
             </div>
         )
@@ -53,8 +53,9 @@ class StudentFormPage extends Component {
 function mapStateToProps(state) {
     return {
         student: state.studentStore.student,
-        errors: state.studentStore.errors
+        errors: state.studentStore.errors,
+        emailed: state.studentStore.emailed
     }
 }
 
-export default connect(mapStateToProps, { newStudent, saveStudent, fetchStudent, updateStudent })(StudentFormPage);
+export default connect(mapStateToProps, { newStudent, saveStudent, fetchStudent, updateStudent, sendEmail })(StudentFormPage);

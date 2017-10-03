@@ -54,3 +54,12 @@ export function deleteStudent(_id) {
         })
     }
 }
+
+export function sendEmail(email) {
+    return dispatch => {
+        return dispatch({
+            type: 'SAVE_EMAIL',
+            payload: apiClientDev.post('/mailer', email)
+        })
+    }
+}

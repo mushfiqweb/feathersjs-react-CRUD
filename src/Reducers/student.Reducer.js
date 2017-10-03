@@ -2,7 +2,8 @@ const defaultState = {
     students: [],
     student: { name: {} },
     loading: false,
-    errors: {}
+    errors: {},
+    emailed:false
 }
 
 export default (state = defaultState, action = {}) => {
@@ -120,6 +121,16 @@ export default (state = defaultState, action = {}) => {
             }
         }
 
+        case 'SAVE_EMAIL_FULFILLED': {            
+            return {
+                ...state,
+                errors: {},
+                emailed: true
+            }
+        }
+
+
+            
         default:
             return state;
     }

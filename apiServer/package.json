@@ -1,10 +1,11 @@
 {
-  "name": "feathersjs-student-crud-backend",  
-  "main": "src",  
-  "scripts": {    
+  "name": "feathersjs-student-crud-backend",
+  "main": "src",
+  "scripts": {
     "start": "nodemon src/"
   },
   "dependencies": {
+    "@sendgrid/mail": "^6.1.4",
     "body-parser": "^1.17.1",
     "compression": "^1.6.2",
     "cors": "^2.8.3",
