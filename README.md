@@ -44,3 +44,4 @@ Your default web browser will be launched automatically with the url http://loca
 ## Used Libraries
 * [Feathers - An open source REST and realtime API layer for modern applications.](https://feathersjs.com/)
 * [Semantic UI React - The official Semantic-UI-React integration.](https://react.semantic-ui.com/introduction)
+* [Ant Design of React.](https://ant.design/docs/react/introduce)
