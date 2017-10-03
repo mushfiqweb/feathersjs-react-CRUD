@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Form, Grid, Button, Input } from 'semantic-ui-react';
+import { Form, Grid, Button, Input, Divider } from 'semantic-ui-react';
 import { Field, reduxForm } from 'redux-form';
 import classnames from 'classnames';
 
@@ -94,7 +94,7 @@ class StudentForm extends Component {
                         <Button primary type='submit' disabled={pristine || submitting}>Save</Button>
                     </Form>
 
-
+                    <Divider/>
                     <Input type='text' placeholder='You email' onBlur={this.OnBlur} />
 
                     <Button onClick={this.sendEmail}>

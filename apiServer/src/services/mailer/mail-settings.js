@@ -3,7 +3,7 @@
 var Key = require('./key-and-values');
 
 const MailSettings = {
-    apiKey: 'sendgrid_api_key'
+    apiKey: 'sendgrid_api'
 }
 
 module.exports = MailSettings;
