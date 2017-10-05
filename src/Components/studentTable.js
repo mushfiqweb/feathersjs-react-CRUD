@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Table } from 'antd'
+import {  Button } from 'semantic-ui-react'
 import _ from 'lodash';
 
 
@@ -16,6 +17,11 @@ class StudentTable extends React.Component {
     onCellClick = (record, event) => {
         console.log(record);
         console.log(event);
+    }
+
+
+    sendEmail = (student) => {
+        console.log(student);
     }
 
     render() {
@@ -70,11 +76,11 @@ class StudentTable extends React.Component {
             title: 'Action',
             key: 'action',
 
-            render: (record) => <span>
-                                    <Link to={`/student/${record.id}`}>Edit</Link>
-                                    <span className="ant-divider" />
-                                    <Link to=''>Edit</Link>
-                                </span>
+            render: (record) =><span>
+                                <Link to={`/student/${record.id}`}> <strong>Edit</strong> </Link>
+                                <span className="ant-divider" />
+                                <Button content='Send' icon='mail' labelPosition='left' size='mini' onClick={record => console.log(record)} />
+                               </span>
 
         }
         ];
