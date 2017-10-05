@@ -41,6 +41,22 @@ npm start
 
 Your default web browser will be launched automatically with the url http://localhost:3215
 
+### Change SMTP Settings
+Open this file feathersjs-student-CRUD\apiServer\src\services\mailer\mailer-hooks.js and change the following settings to your own.
+
+```bash
+// change the user and pass !
+var transporter = nodemailer.createTransport({
+    host: 'smtp.zoho.com',
+    port: 465,
+    secure: true, // use SSL
+    auth: {
+      user: 'hello@hello.com',
+      pass: 'pass'
+    }
+});
+```
+
 ## Used Libraries
 * [Feathers - An open source REST and realtime API layer for modern applications.](https://feathersjs.com/)
 * [Semantic UI React - The official Semantic-UI-React integration.](https://react.semantic-ui.com/introduction)
