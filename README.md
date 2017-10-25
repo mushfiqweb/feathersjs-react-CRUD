@@ -7,7 +7,7 @@ This a basic crud react-redux crud application. It currently uses mongodb for th
 ##  How to install
 
 ```bash
-git clone https://github.com/mushfiqrs/feathersjs-student-CRUD.git
+git clone https://github.com/mushfiqweb/feathersjs-student-CRUD.git
 cd feathersjs-student-CRUD
 
 # Install frontend dependencies
