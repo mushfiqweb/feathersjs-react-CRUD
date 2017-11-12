@@ -3,6 +3,8 @@ import { Form, Grid, Button, Input, Divider } from 'semantic-ui-react';
 import { Field, reduxForm } from 'redux-form';
 import classnames from 'classnames';
 
+import AddBankComponent from "../Components/addBankComponent";
+
 const validate = (values) => {
     const errors = { name: {} };
     if (!values.name || !values.name.first) {
@@ -32,10 +34,6 @@ const validate = (values) => {
 }
 
 class StudentForm extends Component {
-    state = {
-        email: ''
-    }
-
     componentWillReceiveProps = (nextProps) => {
         const { student } = nextProps;
         if (student._id !== this.props.student._id) {
@@ -51,59 +49,23 @@ class StudentForm extends Component {
         </Form.Field>
     )
 
-    sendEmail = () => {
-        var self = this;
-        let std = this.props.student;
-
-        var emailContent = {
-            email: self.state.email,
-            emailSubject: 'email from featherjs CRUD App',
-            emailInText: 'Student Name is :' + std.name.first + ' ' + std.name.last,
-            emailInHTML: 'Student Name is :' + std.name.first + ' ' + std.name.last
-            
-        }
-        
-        this.props.sendEmail(JSON.stringify(emailContent));
-    }
-
-    OnBlur = (e, data) => {
-        var self = this;
-        self.setState({
-            email: e.target.value
-        });
-    }
-
     render() {
         const { handleSubmit, pristine, submitting, loading, student } = this.props;
         return (
             <Grid centered columns={2}>
                 <Grid.Column>
-                    <h1 style={{ marginTop: "1em" }}>{student._id ? 'Edit student' : 'Add New student'}</h1>
-                    <Form onSubmit={handleSubmit} loading={loading}>
-                        <Form.Group widths='equal'>
+                    <Grid.Row>
+                        <h1 style={{ marginTop: "1em" }}> Registration </h1>
+                        <Form onSubmit={handleSubmit} loading={loading}>
                             <Field name="name.first" type="text" component={this.renderField} label="First Name" />
                             <Field name="name.last" type="text" component={this.renderField} label="Last Name" />
-                        </Form.Group>
-
-                        <Field name="class" type="text" component={this.renderField} label="Class" />
-                        <Field name="rank" type="text" component={this.renderField} label="Rank" />
-                        <Field name="mark" type="number" component={this.renderField} label="Mark" />
-
-                        <Field name="phone" type="text" component={this.renderField} label="Phone" />
-                        <Field name="email" type="text" component={this.renderField} label="Email" />
-                        <Button primary type='submit' disabled={pristine || submitting}>Save</Button>
-                    </Form>
-
-                    <Divider/>
-                    <Input type='text' placeholder='You email' onBlur={this.OnBlur} />
-
-                    <Button onClick={this.sendEmail}>
-                        Email me
-                    </Button>
-
-                    <div>
-                        {this.props.emailed?<p>Sent</p>:<p>Not Sent</p>}
-                    </div>                    
+                            <Field name="email" type="text" component={this.renderField} label="Email" />
+                            <Button primary type='submit'>Save</Button>
+                        </Form>
+                    </Grid.Row>
+                    <Grid.Row>
+                        <AddBankComponent/>
+                    </Grid.Row>
                 </Grid.Column>
             </Grid>
         )
