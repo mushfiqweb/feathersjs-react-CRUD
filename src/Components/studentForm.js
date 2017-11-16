@@ -34,6 +34,7 @@ const validate = (values) => {
 }
 
 class StudentForm extends Component {
+    
     componentWillReceiveProps = (nextProps) => {
         const { student } = nextProps;
         if (student._id !== this.props.student._id) {
