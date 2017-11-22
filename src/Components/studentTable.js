@@ -77,9 +77,9 @@ class StudentTable extends React.Component {
             key: 'action',
 
             render: (record) =><span>
-                                <Link to={`/student/${record.id}`}> <strong>Edit</strong> </Link>
-                                <span className="ant-divider" />
-                                <Button content='Send' icon='mail' labelPosition='left' size='mini' onClick={record => console.log(record)} />
+                                    <Link to={`/student/${record.id}`}> <strong>Edit</strong> </Link>
+                                    <span className="ant-divider" />
+                                    <Button content='Send' icon='mail' labelPosition='left' size='mini' onClick={record => console.log(record)} />
                                </span>
 
         }
