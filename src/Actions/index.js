@@ -2,7 +2,7 @@ import axios from "axios";
 
 /* DEVELOPMENT CLIENTS */
 export const apiClientDev = axios.create({
-    baseURL: "http://localhost:3931",
+    baseURL: "https://mushfiqweb-api.herokuapp.com",
     headers: {
         "Content-Type": "application/json"
     }
@@ -12,7 +12,7 @@ export const apiClientDev = axios.create({
 /* PRODUCTION CLIENTS */
 
 export const apiClientProd = axios.create({
-    baseURL: "http://url-to-production",
+    baseURL: "https://mushfiqweb-api.herokuapp.com",
     headers: {
         "Content-Type": "application/json"
     }

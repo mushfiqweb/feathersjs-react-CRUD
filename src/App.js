@@ -5,7 +5,6 @@ import StudentFormPage from './Pages/studentForm.Page';
 import StudentListPage from './Pages/studentList.Page'
 import StudentTablePage from './Pages/studentTable.page'
 
-
 const style = {
 
   h3: {
