@@ -127,10 +127,7 @@ export default (state = defaultState, action = {}) => {
                 errors: {},
                 emailed: true
             }
-        }
-
-
-            
+        }            
         default:
             return state;
     }

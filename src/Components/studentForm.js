@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import { Form, Grid, Button, Input, Divider } from 'semantic-ui-react';
+import { Form, Grid, Button, Divider } from 'semantic-ui-react';
 import { Field, reduxForm } from 'redux-form';
 import classnames from 'classnames';
-
-import AddBankComponent from "../Components/addBankComponent";
 
 const validate = (values) => {
     const errors = { name: {} };
@@ -12,7 +10,15 @@ const validate = (values) => {
             message: 'You need to provide First Name'
         }
     }
-
+    if (!values.phone) {
+        errors.phone = {
+            message: 'You need to provide a Phone number'
+        }
+    } else if (!/^\+(?:[0-9] ?){6,14}[0-9]$/.test(values.phone)) {
+        errors.phone = {
+            message: 'Phone number must be in International format'
+        }
+    }
     if (!values.email) {
         errors.email = {
             message: 'You need to provide an Email address'
@@ -26,14 +32,14 @@ const validate = (values) => {
 }
 
 class StudentForm extends Component {
-<<<<<<< HEAD
-=======
-    
->>>>>>> 76b77dbc48302f6562ded100c340d0fa81ff5a86
+    state = {
+        email: ''
+    }
+
     componentWillReceiveProps = (nextProps) => {
-        const { user } = nextProps;
-        if (user._id !== this.props.user._id) {
-            this.props.initialize(user)
+        const { student } = nextProps;
+        if (student._id !== this.props.student._id) {
+            this.props.initialize(student)
         }
     }
 
@@ -46,37 +52,32 @@ class StudentForm extends Component {
     )
 
     render() {
-        const { handleSubmit, loading, user } = this.props;
+        const { handleSubmit, pristine, submitting, loading, student } = this.props;
         return (
             <Grid centered columns={2}>
                 <Grid.Column>
-<<<<<<< HEAD
-                    <h1 style={{ marginTop: "1em" }}> Registration </h1>
+                    <h1 style={{ marginTop: "1em" }}>{student._id ? 'Edit student' : 'Add New student'}</h1>
                     <Form onSubmit={handleSubmit} loading={loading}>
-                        <Field name="name.first" type="text" component={this.renderField} label="First Name" />
-                        <Field name="name.last" type="text" component={this.renderField} label="Last Name" />
-
-                        <Field name="email" type="text" component={this.renderField} label="Email" />
-                        <Button type='submit' >Submit</Button>
-                    </Form>
-=======
-                    <Grid.Row>
-                        <h1 style={{ marginTop: "1em" }}> Registration </h1>
-                        <Form onSubmit={handleSubmit} loading={loading}>
+                        <Form.Group widths='equal'>
                             <Field name="name.first" type="text" component={this.renderField} label="First Name" />
                             <Field name="name.last" type="text" component={this.renderField} label="Last Name" />
-                            <Field name="email" type="text" component={this.renderField} label="Email" />
-                            <Button primary type='submit'>Save</Button>
-                        </Form>
-                    </Grid.Row>
-                    <Grid.Row>
-                        <AddBankComponent/>
-                    </Grid.Row>
->>>>>>> 76b77dbc48302f6562ded100c340d0fa81ff5a86
+                        </Form.Group>
+
+                        <Field name="class" type="text" component={this.renderField} label="Class" />
+                        <Field name="rank" type="text" component={this.renderField} label="Rank" />
+                        <Field name="mark" type="number" component={this.renderField} label="Mark" />
+
+                        <Field name="phone" type="text" component={this.renderField} label="Phone" />
+                        <Field name="email" type="text" component={this.renderField} label="Email" />
+                        <Button primary type='submit' disabled={pristine || submitting}>Save</Button>
+                    </Form>
+
+                    <Divider />
+                   
                 </Grid.Column>
             </Grid>
         )
     }
 }
 
-export default reduxForm({ form: 'user', validate })(StudentForm);
+export default reduxForm({ form: 'student', validate })(StudentForm);
