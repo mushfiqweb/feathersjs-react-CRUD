@@ -61,3 +61,6 @@ var transporter = nodemailer.createTransport({
 * [Feathers - An open source REST and realtime API layer for modern applications.](https://feathersjs.com/)
 * [Semantic UI React - The official Semantic-UI-React integration.](https://react.semantic-ui.com/introduction)
 * [Ant Design of React.](https://ant.design/docs/react/introduce)
+
+
+<a href="https://www.buymeacoffee.com/6RvYw3S"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;"  target="_blank"></a>
