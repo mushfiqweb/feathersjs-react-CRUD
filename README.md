@@ -1,4 +1,4 @@
-# feathersjs-student-CRUD
+# feathersjs-react-CRUD
 
 
 ## Introduction
@@ -7,8 +7,8 @@ This a basic crud react-redux crud application. It currently uses mongodb for th
 ##  How to install
 
 ```bash
-git clone https://github.com/mushfiqweb/feathersjs-student-CRUD.git
-cd feathersjs-student-CRUD
+git clone https://github.com/mushfiqweb/feathersjs-react-CRUD.git
+cd feathersjs-react-CRUD
 
 # Install frontend dependencies
 npm install
@@ -26,7 +26,7 @@ Check mongodb url in config
 Start the backend server first:
 
 ```bash
-cd feathersjs-student-CRUD/apiServer
+cd feathersjs-react-CRUD/apiServer
 npm start
 ```
 This will run the backend server at localhost:3931. If all is working well, you should be able to access the url http://localhost:3931/students from your Browser or Postman
@@ -35,14 +35,14 @@ This will run the backend server at localhost:3931. If all is working well, you 
 Open a separate terminal to start the client:
 
 ```bash
-cd feathersjs-student-CRUD
+cd feathersjs-react-CRUD
 npm start
 ```
 
 Your default web browser will be launched automatically with the url http://localhost:3215
 
 ### Change SMTP Settings
-Open this file feathersjs-student-CRUD\apiServer\src\services\mailer\mailer-hooks.js and change the following settings to your own.
+Open this file feathersjs-react-CRUD\apiServer\src\services\mailer\mailer-hooks.js and change the following settings to your own.
 
 ```bash
 // change the user and pass !
